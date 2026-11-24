@@ -1,3 +1,4 @@
+[![Validate and update profile](https://github.com/Qubuhub-org/gh.io/actions/workflows/validate-and-update.yml/badge.svg)](https://github.com/Qubuhub-org/gh.io/actions/workflows/validate-and-update.yml)
 # gh.io
 
 Repository for the Qubuhub organization’s web presence and documentation assets.
