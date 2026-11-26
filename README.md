@@ -1,33 +1,47 @@
-[![Validate and update profile](https://github.com/Qubuhub-org/gh.io/actions/workflows/validate-and-update.yml/badge.svg)](https://github.com/Qubuhub-org/gh.io/actions/workflows/validate-and-update.yml)
-# gh.io
+# qubuhuborg
 
-Repository for the Qubuhub organization’s web presence and documentation assets.
+Corporate website and organization resources for **qubuhuborg** — engineering intelligence and building the future.
 
-## Repository layout
+## Website
 
-- `.github/profile/README.md` — organization profile shown by GitHub.
-- `scripts/update_readme.py` — safe updater for explicitly marked generated sections.
-- `tests/` — standard-library unit tests for README update behavior.
-- `packages/rsc/` — package-specific documentation.
-- `docs/` — maintenance notes and audit findings.
-- `index.html` — retained site template; see the maintenance notes before changing its rendering pipeline.
+The production website is a lightweight, responsive static site deployed with GitHub Pages.
+
+- `index.html` — semantic homepage and SEO metadata.
+- `assets/css/site.css` — responsive design system and visual styling.
+- `assets/js/site.js` — accessible mobile navigation and dynamic copyright year.
+- `assets/favicon.svg` — vector brand mark.
+- `.github/workflows/static.yml` — the single production Pages deployment workflow.
+- `.github/workflows/jekyll-gh-pages.yml` — legacy Jekyll build validation only; it does not deploy.
+
+## Technology focus
+
+- AI and machine learning
+- Web4 applications
+- Blockchain solutions
+- Custom software
+- Digital platforms
+- Innovation and research
+
+## Repository maintenance
+
+The repository also retains its organization profile, notebooks, documentation history and Python profile updater. Website changes are isolated from those existing assets.
 
 ## Local validation
 
-Requires Python 3.10 or later. No third-party packages are needed.
+Requires Python 3.10 or later. No third-party packages are required for the test suite.
 
 ```sh
 python -m unittest discover -s tests -v
 ```
 
-To refresh the profile timestamp:
+To refresh the organization profile timestamp:
 
 ```sh
 python scripts/update_readme.py
 ```
 
-To include recent blog posts, configure the repository variable `BLOG_FEED_URL` with a valid HTTPS RSS or Atom feed URL. If it is unset, the script does not make a network request or overwrite the blog section.
+Recent blog posts are optional. Configure the repository variable `BLOG_FEED_URL` with a canonical HTTPS RSS or Atom feed URL. When unset, the updater makes no network request and leaves the blog section unchanged.
 
-## Safety and maintenance
+## Deployment
 
-The updater only edits content enclosed by its own HTML comment markers. It rejects malformed markers and non-HTTPS feed URLs, caps feed responses at 2 MB, uses a request timeout, and writes updates atomically. Review changes before merging; scheduled automation should never be treated as a substitute for code review.
+Pushes to `main` run the repository test suite, stage only the website files, and publish the resulting artifact to GitHub Pages. The Jekyll workflow is validation-only to prevent competing production deployments.
