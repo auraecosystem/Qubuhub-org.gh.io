@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 :root{color-scheme:dark;--bg:#07111f;--panel:#0c1b2d;--panel-2:#10243a;--ink:#f4f8ff;--muted:#9eafc4;--blue:#168cff;--cyan:#56c8ff;--line:rgba(167,198,232,.16);--max:1180px}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:90px}
